@@ -1,0 +1,46 @@
+Palindrome Checker Using Java (Two-Pointer Technique)
+-A palindrome is a word, number, or string that reads the same forward and backward.
+
+Examples:
+madam → Palindrome
+racecar → Palindrome
+hello → Not a palindrome
+
+Sample Input and Output:
+Example 1:
+input: madam
+output: Palindrome
+Example 2:
+input: deer
+output: Not palindrome
+
+PROGRAM:
+import java.util.*;
+public class palindrome {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+
+        int left=0;
+        int right=s.length()-1;
+        Boolean p=true;
+        
+        while(left<right){
+            if(s.charAt(left)!=s.charAt(right)){
+                p=false;
+                break;
+
+            }
+            left++;
+            right--;
+            
+        }
+        if(p){
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Not Palindrome");
+        }
+
+    }
+}
