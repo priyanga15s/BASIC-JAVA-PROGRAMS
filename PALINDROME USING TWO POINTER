@@ -10,6 +10,7 @@ Sample Input and Output:
 Example 1:
 input: madam
 output: Palindrome
+
 Example 2:
 input: deer
 output: Not palindrome
@@ -19,8 +20,9 @@ import java.util.*;
 public class palindrome {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        String s=sc.next();
 
+        //INPUT
+        String s=sc.next();
         int left=0;
         int right=s.length()-1;
         Boolean p=true;
