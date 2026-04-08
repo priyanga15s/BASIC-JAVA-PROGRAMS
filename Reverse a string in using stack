@@ -1,0 +1,15 @@
+import java.util.*;
+public class Stack_Reverse {
+    public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+      Stack<Character> stack = new Stack<>();
+      String rev = "", s = scn.nextLine();
+      for(int i = 0; i<s.length(); i++){
+        char ch = s.charAt(i);
+        stack.push(ch);
+      }
+      while(!stack.isEmpty())
+        rev+=stack.pop();
+      System.out.print(rev);
+}
+}
