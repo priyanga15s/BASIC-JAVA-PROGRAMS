@@ -1,0 +1,110 @@
+//STACK OPERATION
+
+import java.util.*;
+class Stack{
+    int size;
+    int top;
+    int arr[];
+    Stack(int size){
+        this.size=size;
+        this.top=-1;
+        this.arr=new int[size];
+
+    }
+    Boolean isFull(){
+        if(top==size-1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    Boolean isEmpty(){
+        if(top==-1){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+    void push(int num){
+        if(isFull()){
+            System.out.println("Overflow");
+        }
+        else{
+            arr[++top]=num;
+        }
+    }
+    void pop(){
+        if(isEmpty()){
+            System.out.println("Underflow");
+        }
+        else{
+
+            System.out.println(arr[top--]);
+        }
+    }
+    void peek(){
+        if(isEmpty()){
+            System.out.println("underflow");
+        }
+        else{
+            System.out.println(arr[top]);
+        }
+    }
+    void traverse(){
+        if(isEmpty()){
+            System.out.println("underflow");
+        }
+        else{
+            for(int i=0;i<=top;i++){
+                System.out.println(arr[i]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+//MAIN PROGRAME
+
+public class StackOperations {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter size of stack: ");
+        int size=sc.nextInt();
+        int num,choice;
+        Stack stack=new Stack(size);
+        while(true){
+            System.out.println("Enter your choice:");
+            choice=sc.nextInt();
+            switch(choice){
+                case 1:{
+                System.out.println("Enter element to push: ");    
+                num=sc.nextInt();
+                stack.push(num);
+                break;
+                }
+
+                case 2:{
+                stack.pop();
+                break;
+                }
+
+                case 3:{
+                stack.peek();
+                break;
+                }
+
+                case 4:{
+                stack.traverse();
+                break;
+
+                }
+                case 5:{
+                    System.out.println("Exited");
+                    return;
+                }
+            }
+        }
+    }
+}
