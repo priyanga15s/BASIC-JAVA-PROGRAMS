@@ -1,0 +1,56 @@
+
+import java.util.*;
+
+class Post{
+    
+    int stack[]=new int[20];
+    int top=-1;
+
+    void push(int num){
+        stack[++top]=num;
+    }
+
+    int pop(){
+        return stack[top--];
+    }
+
+    void evaluate(String postfix){
+        for(int i=0;i<postfix.length();i++){
+            char ch=postfix.charAt(i);
+            if(Character.isDigit(ch)){
+                push(ch-'0');//int
+            }
+            else{
+                int b=pop();
+                int a=pop();
+                if(ch=='+'){
+                    push(a+b);
+                }
+                else if(ch=='-'){
+                    push(a-b);
+                }
+                else if(ch=='*'){
+                    push(a*b);
+                }
+                else if(ch=='/'){
+                    if(b==0){
+                        System.out.println("Error");
+                    
+                    return;
+                    }
+                    push(a/b);
+                }
+            }
+        }
+        System.out.println(stack[top]);
+    }
+}
+public class PostfixEvaluation {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       String postfix=sc.next();
+       Post p=new Post();
+       p.evaluate(postfix);
+
+    }
+}
