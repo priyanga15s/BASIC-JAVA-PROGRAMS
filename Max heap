@@ -1,0 +1,43 @@
+import java.util.*;
+
+class Maxheap{
+    int arr[];
+
+    Maxheap(int n){
+        arr=new int[n];
+    }
+
+    void create(int num,int index){
+        arr[index]=num;
+        heapifyup(index);
+    }
+
+    void heapifyup(int index){
+        int parentIndex=(index-1)/2;
+        while(index > 0 && arr[parentIndex] <arr[index]){
+            int temp=arr[parentIndex];
+            arr[parentIndex]=arr[index];
+            arr[index]=temp;
+            index=parentIndex;
+            parentIndex=(index-1)/2;
+        }
+    }
+    void display(){
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]+" ");
+        }
+    }
+}
+public class MaxHeap{
+    public static void main(String[] args){
+        Scanner sc=new Scanner (System.in);
+        int n,num;
+        n=sc.nextInt();
+        Maxheap max=new Maxheap(n);
+        for(int i=0;i<n;i++){
+            num=sc.nextInt();
+            max.create(num,i);
+        }
+        max.display();
+    }
+}
