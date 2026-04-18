@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      PriorityQueue<Integer> pq=new PriorityQueue<>(Collections.reverseOrder());
+      pq.add(10);
+      pq.add(30);
+      pq.add(2);
+      pq.add(1);
+      pq.add(5);
+      pq.add(23);
+      
+      System.out.println(pq);
+      System.out.println(pq.poll());
+      System.out.println(pq);
+      System.out.println(pq.peek());
+    }
+}
+
+output :
+
+[30, 10, 23, 1, 5, 2]
+30
+[23, 10, 2, 1, 5]
+23
