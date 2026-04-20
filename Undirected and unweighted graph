@@ -1,0 +1,40 @@
+
+import java.util.*;
+public class Graph {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+            int V=sc.nextInt();
+            int e=sc.nextInt();
+
+            int mat[][]=new int[V][V];
+            for(int i=0;i<e;i++){
+                int u=sc.nextInt();
+                int v=sc.nextInt();
+                
+                //undirected and unweighted
+                mat[u][v]=1;
+                mat[v][u]=1;
+            }
+            for(int i=0;i<V;i++){
+                for(int j=0;j<V;j++){
+                    System.out.print(mat[i][j]+" ");
+                }
+                System.out.println();
+            }
+        
+
+    }
+}
+
+input :
+4 4
+0 1
+0 3 
+2 1 
+2 3
+
+output :
+0 1 0 1 
+1 0 1 0 
+0 1 0 1 
+1 0 1 0 
