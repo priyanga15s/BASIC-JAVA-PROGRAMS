@@ -1,0 +1,51 @@
+import java.util.*;
+
+public class Graph {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int V = sc.nextInt(); 
+        int E = sc.nextInt(); 
+
+        int[][] mat = new int[V][V];
+
+        
+        for (int i = 0; i < V; i++) {
+            Arrays.fill(mat[i], 0);
+        }
+
+        
+        for (int i = 0; i < E; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+            int w = sc.nextInt();
+
+            
+            mat[u][v] = w;
+            
+        }
+
+        
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                System.out.print(mat[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+input :
+4 4
+0 1 5
+1 2 3
+2 3 7
+0 3 2
+
+output :
+0 5 0 2 
+0 0 3 0 
+0 0 0 7 
+0 0 0 0 
